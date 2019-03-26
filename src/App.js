@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p>
-          HELLO WORLD!123
+          HELLO WORLD!123. Does this appear online?
           </p>
           <Karta/>
         </header>
