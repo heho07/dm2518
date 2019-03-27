@@ -34,11 +34,11 @@ class Karta extends Component {
     this.state.map.panBy(x, y);
   }
 
-  createMarker(){
+  createMarker(dragBoolean){
     let marker = new window.google.maps.Marker({
       position:this.state.map.getCenter(),
       map:this.state.map,
-      draggable:true,
+      draggable:dragBoolean,
     });
   }
 
@@ -69,8 +69,9 @@ class Karta extends Component {
         <div className="row">
           <button onClick = {() => this.panBy(0, 50)}><i className="fa fa-arrow-down"></i></button>
         </div>
-        <button onClick = {() => this.createMarker()}>marker</button>
-        <p>{this.state.test}</p>
+        <button onClick = {() => this.createMarker(true)}>Draggable marker</button>
+        <button onClick = {() => this.createMarker(false)}>Undraggable marker</button>
+
       </div>
     );
   }
