@@ -56,7 +56,7 @@ class Karta extends Component {
         <button class="btn btn-light" onClick={() => this.goFull()}>
           Go Fullscreen
         </button>
-        <div id="map" style={{width:window.innerWidth-100, height:window.innerHeight-200}}>
+        <div id="map" style={{width:window.innerWidth, height:window.innerHeight-200}}>
         </div>
         <div class="flex-container">
           <button class="btn btn-light flex-button" onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
