@@ -9,7 +9,7 @@ class Homescreen extends Component {
 
     return (
       <div>
-        <Link to = "/Karta">Map</Link>
+        <Link to = {process.env.PUBLIC_URL+"/Karta"}>Map</Link>
         <p>test</p>
       </div>
     );
