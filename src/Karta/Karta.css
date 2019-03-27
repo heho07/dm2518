@@ -11,3 +11,17 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+.flex-container {  
+  display: flex; 
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.flex-container hr {
+	width: 100%;
+}
+
+.flex-button {
+	width: 50%;
+}

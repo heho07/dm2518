@@ -53,37 +53,25 @@ class Karta extends Component {
     return (
       <Fullscreen enabled={this.state.isFull} onChange={isFull => this.setState({isFull})}>
       <div>
-        <button onClick={() => this.goFull()}>
+        <button class="btn btn-light" onClick={() => this.goFull()}>
           Go Fullscreen
         </button>
-
-
         <div id="map" style={{width:window.innerWidth-20, height:window.innerHeight - 100}}>
         </div>
-        <div className="row">
-          <div className="col-sm-1" id="inner">
-            <button onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
-          </div>
-          <div className="col-sm-1" id="inner">
-            <button onClick = {() => this.zoom(-1)}><i className="fa fa-minus"></i></button>
-          </div>
+        <div class="flex-container">
+          <button class="btn btn-light flex-button" onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
+          <button class="btn btn-light flex-button" onClick = {() => this.zoom(-1)}><i className="fa fa-minus"></i></button>
+          <hr/>
+          <button class="btn btn-light flex-button" onClick = {() => this.panBy(0, -50)}><i className="fa fa-arrow-up"></i></button>
+          <hr/>            
+          <button class="btn btn-light flex-button" onClick = {() => this.panBy(-50, 0)}><i className="fa fa-arrow-left"></i></button>
+          <button class="btn btn-light flex-button" onClick = {() => this.panBy(50, 0)}><i className="fa fa-arrow-right"></i></button> 
+          <hr/>           
+          <button class="btn btn-light flex-button" onClick = {() => this.panBy(0, 50)}><i className="fa fa-arrow-down"></i></button>
+          <hr/>
+          <button class="btn btn-light flex-button" onClick = {() => this.createMarker(true)}>Draggable marker</button>
+          <button class="btn btn-light flex-button" onClick = {() => this.createMarker(false)}>Undraggable marker</button>
         </div>
-        <div className="row">
-          <div className="col-sm-6"></div>
-          <div className="">
-            <button onClick = {() => this.panBy(0, -50)}><i className="fa fa-arrow-up"></i></button>
-          </div>
-        </div>
-        <div className="row">
-          <button onClick = {() => this.panBy(-50, 0)}><i className="fa fa-arrow-left"></i></button>
-          <button onClick = {() => this.panBy(50, 0)}><i className="fa fa-arrow-right"></i></button>
-        </div>
-        <div className="row">
-          <button onClick = {() => this.panBy(0, 50)}><i className="fa fa-arrow-down"></i></button>
-        </div>
-        <button onClick = {() => this.createMarker(true)}>Draggable marker</button>
-        <button onClick = {() => this.createMarker(false)}>Undraggable marker</button>
-
       </div>
       </Fullscreen>
     );
