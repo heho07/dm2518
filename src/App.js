@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from "react-router-dom";
 import Karta from "./Karta/Karta";
+import Homescreen from "./Homescreen/Homescreen";
 import './App.css';
 
 class App extends Component {
@@ -7,10 +9,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-          The Map App
-          </p>
-          <Karta/>
+          <Route exact path="/" component={Homescreen} />
+          <Route path = "/Karta" render = {() => <Karta/>}/>
+          
         </header>
       </div>
     );
