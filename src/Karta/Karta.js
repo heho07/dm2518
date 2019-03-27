@@ -39,9 +39,15 @@ class Karta extends Component {
       <div>
         <div id="map" style={{width:window.innerWidth-20, height:window.innerHeight - 100}}>
         </div>
-        <button onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
-        <button onClick = {() => this.zoom(-1)}><i className="fa fa-minus"></i></button>
-        
+        <div className="row">
+          <div className="col-sm-5"></div>
+          <div className="col-sm-1">
+            <button onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
+          </div>
+          <div className="col-sm-1">
+            <button onClick = {() => this.zoom(-1)}><i className="fa fa-minus"></i></button>
+          </div>
+        </div>
         <button onMouseDown = {() => this.panBy(0, -50)}><i className="fa fa-arrow-up"></i></button>
         <button onClick = {() => this.panBy(0, 50)}><i className="fa fa-arrow-down"></i></button>
         <button onClick = {() => this.panBy(-50, 0)}><i className="fa fa-arrow-left"></i></button>
