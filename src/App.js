@@ -11,6 +11,7 @@ class App extends Component {
         <header className="App-header">
           <Route exact path="/" component={Homescreen} />
           <Route path = "/Karta" render = {() => <Karta/>}/>
+          <p>test</p>
           
         </header>
       </div>
