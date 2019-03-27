@@ -3,7 +3,6 @@
 	height: 100%;
 }
 
-.col-centered{
-    float: none;
-    margin: 0 auto;
+#inner {
+  margin: 0 auto;
 }
