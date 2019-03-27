@@ -29,6 +29,10 @@ class Karta extends Component {
     this.state.map.setZoom(currentZoom + number);
   }
 
+  panBy(x, y){
+    this.state.map.panBy(x, y);
+  }
+
   render() {
 
     return (
@@ -37,6 +41,12 @@ class Karta extends Component {
         </div>
         <button onClick = {() => this.zoom(1)}><i class="fa fa-plus"></i></button>
         <button onClick = {() => this.zoom(-1)}><i class="fa fa-minus"></i></button>
+        
+        <button onClick = {() => this.panBy(0, -50)}><i class="fa fa-arrow-up"></i></button>
+        <button onClick = {() => this.panBy(0, 50)}><i class="fa fa-arrow-down"></i></button>
+        <button onClick = {() => this.panBy(-50, 0)}><i class="fa fa-arrow-left"></i></button>
+        <button onClick = {() => this.panBy(50, 0)}><i class="fa fa-arrow-right"></i></button>
+        
         <p>{this.state.test}</p>
       </div>
     );
