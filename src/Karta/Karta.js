@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Fullscreen from "react-full-screen";
 import "./Karta.css";
 
 class Karta extends Component {
@@ -8,6 +9,7 @@ class Karta extends Component {
     this.state = {
       map:null,
       markers:[],
+      isFull: false,
     }
   }
   
@@ -42,10 +44,20 @@ class Karta extends Component {
     });
   }
 
+  goFull(){
+    this.setState({ isFull: true });
+  }
+
   render() {
 
     return (
+      <Fullscreen enabled={this.state.isFull} onChange={isFull => this.setState({isFull})}>
       <div>
+        <button onClick={() => this.goFull()}>
+          Go Fullscreen
+        </button>
+
+
         <div id="map" style={{width:window.innerWidth-20, height:window.innerHeight - 100}}>
         </div>
         <div className="row">
@@ -73,6 +85,7 @@ class Karta extends Component {
         <button onClick = {() => this.createMarker(false)}>Undraggable marker</button>
 
       </div>
+      </Fullscreen>
     );
   }
 }
