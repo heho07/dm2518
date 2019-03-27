@@ -10,6 +10,7 @@ class Homescreen extends Component {
     return (
       <div>
         <Link to = "/Karta">Map</Link>
+        <p>test</p>
       </div>
     );
   }
