@@ -37,15 +37,15 @@ class Karta extends Component {
 
     return (
       <div>
-        <div id="map" style={{width:500, height:500}}>
+        <div id="map" style={{width:window.innerWidth-20, height:window.innerHeight - 100}}>
         </div>
-        <button onClick = {() => this.zoom(1)}><i class="fa fa-plus"></i></button>
-        <button onClick = {() => this.zoom(-1)}><i class="fa fa-minus"></i></button>
+        <button onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
+        <button onClick = {() => this.zoom(-1)}><i className="fa fa-minus"></i></button>
         
-        <button onClick = {() => this.panBy(0, -50)}><i class="fa fa-arrow-up"></i></button>
-        <button onClick = {() => this.panBy(0, 50)}><i class="fa fa-arrow-down"></i></button>
-        <button onClick = {() => this.panBy(-50, 0)}><i class="fa fa-arrow-left"></i></button>
-        <button onClick = {() => this.panBy(50, 0)}><i class="fa fa-arrow-right"></i></button>
+        <button onMouseDown = {() => this.panBy(0, -50)}><i className="fa fa-arrow-up"></i></button>
+        <button onClick = {() => this.panBy(0, 50)}><i className="fa fa-arrow-down"></i></button>
+        <button onClick = {() => this.panBy(-50, 0)}><i className="fa fa-arrow-left"></i></button>
+        <button onClick = {() => this.panBy(50, 0)}><i className="fa fa-arrow-right"></i></button>
         
         <p>{this.state.test}</p>
       </div>
