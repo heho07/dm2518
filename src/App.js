@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Route exact path={process.env.PUBLIC_URL+"/"} component={Homescreen} />
-          <Route path = "/Karta" render = {() => <Karta/>}/>
+          <Route path = {process.env.PUBLIC_URL+"/Karta"} render = {() => <Karta/>}/>
           <p>test</p>
           
         </header>
