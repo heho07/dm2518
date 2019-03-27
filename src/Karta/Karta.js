@@ -35,8 +35,8 @@ class Karta extends Component {
       <div>
         <div id="map" style={{width:500, height:500}}>
         </div>
-        <button onClick = {() => this.zoom(1)}>Zoom in one level</button>
-        <button onClick = {() => this.zoom(-1)}>Zoom out one level</button>
+        <button onClick = {() => this.zoom(1)}><i class="fa fa-plus"></i></button>
+        <button onClick = {() => this.zoom(-1)}><i class="fa fa-minus"></i></button>
         <p>{this.state.test}</p>
       </div>
     );
