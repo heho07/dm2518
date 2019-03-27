@@ -7,6 +7,7 @@ class Karta extends Component {
     super(props);
     this.state = {
       map:null,
+      markers:[],
     }
   }
   
@@ -31,6 +32,14 @@ class Karta extends Component {
 
   panBy(x, y){
     this.state.map.panBy(x, y);
+  }
+
+  createMarker(){
+    let marker = new window.google.maps.Marker({
+      position:this.state.map.getCenter(),
+      map:this.state.map,
+      draggable:true,
+    });
   }
 
   render() {
@@ -60,6 +69,7 @@ class Karta extends Component {
         <div className="row">
           <button onClick = {() => this.panBy(0, 50)}><i className="fa fa-arrow-down"></i></button>
         </div>
+        <button onClick = {() => this.createMarker()}>marker</button>
         <p>{this.state.test}</p>
       </div>
     );
