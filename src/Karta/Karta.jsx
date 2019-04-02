@@ -57,17 +57,26 @@ class Karta extends Component {
 
   render() {
     console.log(this.props.coords);
+    let hereMarker;    
+    if (this.props.isGeolocationAvailable) {
+      hereMarker= (
+        <button class = "btn btn-light flex-button leftButton" onClick = {() => { 
+          this.createMarker(false, "currPos", {lat:this.props.coords.latitude, lng: this.props.coords.longitude});
+          this.state.map.panTo({lat:this.props.coords.latitude, lng: this.props.coords.longitude});
+        }}>
+        Here</button>); 
+    }
+    else{
+      hereMarker = <p>Not available</p>;
+    }
+       
     return (
       <div style = {{height:window.innerHeight}}>
 {/*         <button class="btn btn-light" onClick={() => this.goFull()}>
           Go Fullscreen
         </button>*/}
         <div id = "locationController">
-          <button class = "btn btn-light flex-button leftButton" onClick = {() => { 
-            this.createMarker(false, "currPos", {lat:this.props.coords.latitude, lng: this.props.coords.longitude});
-            this.state.map.panTo({lat:this.props.coords.latitude, lng: this.props.coords.longitude});
-            }}>
-            Here</button> 
+          {hereMarker}           
           <button class = "btn btn-light flex-button leftButton" onClick = {() => 
             this.createMarker(false, "KTH Library", {lat: 59.347842, lng: 18.072874})}>
             KTH Library</button> 
