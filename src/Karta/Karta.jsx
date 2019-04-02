@@ -63,10 +63,18 @@ class Karta extends Component {
           Go Fullscreen
         </button>*/}
         <div id = "locationController">
-          <button class = "btn btn-light flex-button leftButton">Here</button> 
-          <button class = "btn btn-light flex-button leftButton" onClick = {() => this.createMarker(false, "KTH Library", {lat: 59.347842, lng: 18.072874})}>KTH Library</button> 
-          <button class = "btn btn-light flex-button leftButton" onClick = {() => this.createMarker(false, "META", {lat: 59.348104, lng: 18.071416})}>META</button> 
-          <button class = "btn btn-light flex-button leftButton" onClick = {() => this.createMarker(false, "Gråttan", {lat: 59.347365, lng: 18.072752})}>Gråttan</button> 
+          <button class = "btn btn-light flex-button leftButton" onClick = {() => 
+            this.createMarker(false, "currPos", {lat:this.props.coords.latitude, lng: this.props.coords.longitude})}>
+            Here</button> 
+          <button class = "btn btn-light flex-button leftButton" onClick = {() => 
+            this.createMarker(false, "KTH Library", {lat: 59.347842, lng: 18.072874})}>
+            KTH Library</button> 
+          <button class = "btn btn-light flex-button leftButton" onClick = {() => 
+            this.createMarker(false, "META", {lat: 59.348104, lng: 18.071416})}>
+            META</button> 
+          <button class = "btn btn-light flex-button leftButton" onClick = {() => 
+            this.createMarker(false, "Gråttan", {lat: 59.347365, lng: 18.072752})}>
+            Gråttan</button> 
         </div>
         {/* the map div's height depends on the height of the controller div. Has a minimum height which can be altered below */}
         <div id="map" style={{width:window.innerWidth, height:window.innerHeight - this.state.controllerHeight, "minHeight":"15%"}}>
