@@ -56,10 +56,8 @@ class Karta extends Component {
   // }
 
   render() {
-    console.log(this.props.coords);
     let hereMarker;
-    console.log(this.props.isGeolocationAvailable);    
-    if (this.props.isGeolocationAvailable) {
+    if (this.props.isGeolocationAvailable && this.props.isGeolocationEnabled) {
       hereMarker= (
         <button class = "btn btn-light flex-button leftButton" onClick = {() => { 
           this.createMarker(false, "currPos", {lat:this.props.coords.latitude, lng: this.props.coords.longitude});
