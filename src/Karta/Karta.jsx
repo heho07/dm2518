@@ -48,6 +48,7 @@ class Karta extends Component {
       map:this.state.map,
       draggable:dragBoolean,
       label:label,
+      //icon:require("../images/favicon.png"), // <- how to create a custom marker
     });
   }
 
