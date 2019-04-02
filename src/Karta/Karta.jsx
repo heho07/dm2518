@@ -25,7 +25,7 @@ class Karta extends Component {
       gestureHandling: 'none',
       zoomControl: false,
     });
-    
+
     this.setState({map:map});
     const controllerHeight = document.getElementById("controller").clientHeight;
     this.setState({controllerHeight:controllerHeight});
@@ -42,11 +42,12 @@ class Karta extends Component {
     this.state.map.panBy(x, y);
   }
 
-  createMarker(dragBoolean){
+  createMarker(dragBoolean, title, coordinates){
     let marker = new window.google.maps.Marker({
-      position:this.state.map.getCenter(),
+      position:coordinates,
       map:this.state.map,
       draggable:dragBoolean,
+      title:title,
     });
   }
 
@@ -84,7 +85,6 @@ class Karta extends Component {
           <hr/>
           <button class="btn btn-light flex-button" onClick = {() => this.createMarker(true)}>Draggable marker</button>
           <button class="btn btn-light flex-button" onClick = {() => this.createMarker(false)}>Undraggable marker</button>
-          <button onClick = {() => alert('test')}>alert</button>
         </div>
       </div>
     );
