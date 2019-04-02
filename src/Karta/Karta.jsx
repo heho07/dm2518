@@ -42,12 +42,12 @@ class Karta extends Component {
     this.state.map.panBy(x, y);
   }
 
-  createMarker(dragBoolean, title, coordinates){
+  createMarker(dragBoolean, label, coordinates){
     let marker = new window.google.maps.Marker({
       position:coordinates,
       map:this.state.map,
       draggable:dragBoolean,
-      title:title,
+      label:label,
     });
   }
 
