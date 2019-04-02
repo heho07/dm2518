@@ -10,6 +10,7 @@ class Karta extends Component {
       map:null,
       markers:[],
 //      isFull: false,
+      controllerHeight:0,
     }
   }
   
@@ -23,6 +24,8 @@ class Karta extends Component {
       zoomControl: false
     });
     this.setState({map:map});
+    const controllerHeight = document.getElementById("controller").clientHeight;
+    this.setState({controllerHeight:controllerHeight});
 
   }
 
@@ -51,14 +54,16 @@ class Karta extends Component {
   render() {
 
     return (
-      <Fullscreen enabled={this.state.isFull} onChange={isFull => this.setState({isFull})}>
-      <div>
+      <div style = {{height:window.innerHeight}}>
 {/*         <button class="btn btn-light" onClick={() => this.goFull()}>
           Go Fullscreen
         </button>*/}
-        <div id="map" style={{width:window.innerWidth, height:window.innerHeight-200}}>
+
+        {/* the map div's height depends on the height of the controller div. Has a minimum height which can be altered below */}
+        <div id="map" style={{width:window.innerWidth, height:window.innerHeight - this.state.controllerHeight, "minHeight":"15%"}}>
+        
         </div>
-        <div class="flex-container">
+        <div class="flex-container" id = "controller">
           <button class="btn btn-light flex-button" onClick = {() => this.zoom(1)}><i className="fa fa-plus"></i></button>
           <button class="btn btn-light flex-button" onClick = {() => this.zoom(-1)}><i className="fa fa-minus"></i></button>
           <hr/>
@@ -73,7 +78,6 @@ class Karta extends Component {
           <button class="btn btn-light flex-button" onClick = {() => this.createMarker(false)}>Undraggable marker</button>
         </div>
       </div>
-      </Fullscreen>
     );
   }
 }
