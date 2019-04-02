@@ -78,6 +78,7 @@ class Karta extends Component {
           <hr/>
           <button class="btn btn-light flex-button" onClick = {() => this.createMarker(true)}>Draggable marker</button>
           <button class="btn btn-light flex-button" onClick = {() => this.createMarker(false)}>Undraggable marker</button>
+          <button onClick = {() => alert('test')}>alert</button>
         </div>
       </div>
     );
