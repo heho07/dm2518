@@ -64,7 +64,9 @@ class Karta extends Component {
         </button>*/}
         <div id = "locationController">
           <button class = "btn btn-light flex-button leftButton" onClick = {() => 
-            this.createMarker(false, "currPos", {lat:this.props.coords.latitude, lng: this.props.coords.longitude})}>
+            this.createMarker(false, "currPos", {lat:this.props.coords.latitude, lng: this.props.coords.longitude);
+            this.props.map{center:{lat:this.props.coords.latitude, lng: this.props.coords.longitude}};
+            }>
             Here</button> 
           <button class = "btn btn-light flex-button leftButton" onClick = {() => 
             this.createMarker(false, "KTH Library", {lat: 59.347842, lng: 18.072874})}>
