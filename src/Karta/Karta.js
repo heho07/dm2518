@@ -9,7 +9,7 @@ class Karta extends Component {
     this.state = {
       map:null,
       markers:[],
-      isFull: false,
+//      isFull: false,
     }
   }
   
@@ -44,18 +44,18 @@ class Karta extends Component {
     });
   }
 
-  goFull(){
-    this.setState({ isFull: true });
-  }
+  // goFull(){
+  //   this.setState({ isFull: true });
+  // }
 
   render() {
 
     return (
       <Fullscreen enabled={this.state.isFull} onChange={isFull => this.setState({isFull})}>
       <div>
-        <button class="btn btn-light" onClick={() => this.goFull()}>
+{/*         <button class="btn btn-light" onClick={() => this.goFull()}>
           Go Fullscreen
-        </button>
+        </button>*/}
         <div id="map" style={{width:window.innerWidth, height:window.innerHeight-200}}>
         </div>
         <div class="flex-container">
