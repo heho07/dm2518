@@ -55,7 +55,7 @@ class Karta extends Component {
   // }
 
   render() {
-    console.log(geolocated);
+    console.log(this.props.coords);
     return (
       <div style = {{height:window.innerHeight}}>
 {/*         <button class="btn btn-light" onClick={() => this.goFull()}>
@@ -91,6 +91,7 @@ class Karta extends Component {
   }
 }
 
+// initializes the geolocated thing and sets Karta aas it's child
 export default geolocated({
   positionOptions: {
     enableHighAccuracy: false,
