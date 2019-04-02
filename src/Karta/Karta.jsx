@@ -60,7 +60,15 @@ class Karta extends Component {
 {/*         <button class="btn btn-light" onClick={() => this.goFull()}>
           Go Fullscreen
         </button>*/}
-
+        <div id = "locationController">
+          <button class = "btn btn-light flex-button leftButton">Here</button> 
+          <button class = "btn btn-light flex-button leftButton">test</button> 
+          <button class = "btn btn-light flex-button leftButton">test</button> 
+          <button class = "btn btn-light flex-button leftButton">test</button> 
+          <button class = "btn btn-light flex-button leftButton">test</button> 
+          <button class = "btn btn-light flex-button leftButton">test</button> 
+          <button class = "btn btn-light flex-button leftButton">test</button> 
+        </div>
         {/* the map div's height depends on the height of the controller div. Has a minimum height which can be altered below */}
         <div id="map" style={{width:window.innerWidth, height:window.innerHeight - this.state.controllerHeight, "minHeight":"15%"}}>
         
