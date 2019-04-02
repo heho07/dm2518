@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Fullscreen from "react-full-screen";
+import {geolocated} from 'react-geolocated';
 import "./Karta.css";
 
 class Karta extends Component {
@@ -54,7 +55,7 @@ class Karta extends Component {
   // }
 
   render() {
-
+    console.log(geolocated);
     return (
       <div style = {{height:window.innerHeight}}>
 {/*         <button class="btn btn-light" onClick={() => this.goFull()}>
@@ -62,9 +63,6 @@ class Karta extends Component {
         </button>*/}
         <div id = "locationController">
           <button class = "btn btn-light flex-button leftButton">Here</button> 
-          <button class = "btn btn-light flex-button leftButton">test</button> 
-          <button class = "btn btn-light flex-button leftButton">test</button> 
-          <button class = "btn btn-light flex-button leftButton">test</button> 
           <button class = "btn btn-light flex-button leftButton">test</button> 
           <button class = "btn btn-light flex-button leftButton">test</button> 
           <button class = "btn btn-light flex-button leftButton">test</button> 
@@ -93,4 +91,9 @@ class Karta extends Component {
   }
 }
 
-export default Karta;
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(Karta);
