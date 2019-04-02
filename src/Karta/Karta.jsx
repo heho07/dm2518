@@ -20,8 +20,7 @@ class Karta extends Component {
       zoom: 15,
       mapTypeId: 'hybrid',
       tilt: 45,
-      gestureHandling: 'none',
-      zoomControl: false
+      disableDefaultUI: true
     });
     this.setState({map:map});
     const controllerHeight = document.getElementById("controller").clientHeight;
