@@ -47,7 +47,10 @@ class Karta extends Component {
       position:coordinates,
       map:this.state.map,
       draggable:dragBoolean,
-      label:label,
+      label:{
+        text:label,
+        color:"#ffffff",
+        fontWeight: "bold"},
       //icon:require("../images/favicon.png"), // <- how to create a custom marker
     });
   }
@@ -67,7 +70,7 @@ class Karta extends Component {
         Here</button>); 
     }
     else{
-      hereMarker = <p>Not available</p>;
+      hereMarker = <button class="btn btn-light flex-button leftButton">Geolocation not available</button>;
     }
        
     return (
