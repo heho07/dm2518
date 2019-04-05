@@ -3,6 +3,11 @@ import Fullscreen from "react-full-screen";
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import "./Yoga.css";
 import * as ons from 'onsenui'; // This needs to be imported to bootstrap the components.
+// Webpack CSS import
+import 'onsenui/css/onsenui.css';
+import 'onsenui/css/onsen-css-components.css';
+
+
 class Yoga extends Component {
   
   constructor(props){
