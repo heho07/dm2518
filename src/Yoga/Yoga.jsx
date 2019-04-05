@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Fullscreen from "react-full-screen";
-
+import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import "./Yoga.css";
 
 class Yoga extends Component {
