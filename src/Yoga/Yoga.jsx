@@ -4,7 +4,7 @@ import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Pa
 import "./Yoga.css";
 
 class Yoga extends Component {
-    
+  
   constructor(props){
     super(props);
     // this.state = {
@@ -15,11 +15,17 @@ class Yoga extends Component {
     // när den skapats
   }
 
+  handleClick(){
+    console.log(ons);
+//    Ons.notification.alert('Hello world!');
+  }
 
   render() {
        
     return (
-        <p>Detta är en subkomponent</p>
+          <Ons.Page>
+            <Ons.Button onClick={this.handleClick}>Tap me!</Ons.Button>
+          </Ons.Page>
       );
   }
 }
