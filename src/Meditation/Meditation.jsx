@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Fullscreen from "react-full-screen";
-import "./Yoga.css";
 
 // imports for OnsenUI
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
@@ -10,7 +9,7 @@ import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 
 
-class Yoga extends Component {
+class Meditation extends Component {
   
   constructor(props){
     super(props);
@@ -38,4 +37,4 @@ class Yoga extends Component {
 }
 
 // initializes the geolocated thing and sets Karta aas it's child
-export default Yoga;
+export default Meditation;
