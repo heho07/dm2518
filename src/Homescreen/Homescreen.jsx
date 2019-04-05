@@ -11,7 +11,7 @@ class Homescreen extends Component {
       <div>
         <h1>Welcome to The Map App!</h1>
         <h3>Click on the map below to start the experience&trade;</h3>
-        <Link to = "/Karta"><img src={require("../images/favicon.png")}/></Link>
+        <Link to = "/Yoga"><img src={require("../images/favicon.png")}/></Link>
       </div>
     );
   }

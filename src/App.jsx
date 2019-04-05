@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from "react-router-dom";
-import Karta from "./Karta/Karta";
+import Yoga from "./Yoga/Yoga";
 import Homescreen from "./Homescreen/Homescreen";
 import './App.css';
 
@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Route exact path="/" component={Homescreen} />
-          <Route path = "/Karta" render = {() => <Karta/>}/>          
+          <Route path = "/Yoga" render = {() => <Yoga/>}/>          
         </header>
       </div>
     );

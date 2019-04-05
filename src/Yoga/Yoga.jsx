@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Fullscreen from "react-full-screen";
 
-import "./Karta.css";
+import "./Yoga.css";
 
-class Karta extends Component {
+class Yoga extends Component {
     
   constructor(props){
     super(props);
@@ -25,4 +25,4 @@ class Karta extends Component {
 }
 
 // initializes the geolocated thing and sets Karta aas it's child
-export default Karta;
+export default Yoga;
