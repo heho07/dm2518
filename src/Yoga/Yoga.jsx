@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Fullscreen from "react-full-screen";
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import "./Yoga.css";
-
+import * as ons from 'onsenui'; // This needs to be imported to bootstrap the components.
 class Yoga extends Component {
   
   constructor(props){
@@ -17,7 +17,7 @@ class Yoga extends Component {
 
   handleClick(){
     console.log(ons);
-//    Ons.notification.alert('Hello world!');
+    ons.notification.alert('Hello world!');
   }
 
   render() {
