@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
+import "./Homescreen.css";
 
 // imports for OnsenUI
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
@@ -22,13 +23,15 @@ class Homescreen extends Component {
     //    <Link to = "/Yoga"><img src={require("../images/favicon.png")}/></Link>
     let data = ["Yoga", "Meditation", "Breathing", "About"];
     return (
-    <Ons.Page>
+    <Ons.Page modifier="appbcg">
+      <div><h1>Relaxation Exercises</h1></div>
   		<Ons.List
        		dataSource= {data}
-       		renderHeader={() =>
-          		<Ons.ListHeader style={{fontSize: 15}} className="testClass"> Header Text </Ons.ListHeader> }
       		renderRow = {(row, idx) => (
-        			<Ons.ListItem onClick = {() => this.handleClick()} key = {row}> <Link to = {"/" + row}> {row} </Link> </Ons.ListItem>
+        			<Ons.ListItem onClick = {() => this.handleClick()} key = {row}> 
+                <div className="left"><Link to = {"/" + row}> {row} </Link></div>
+                <div className="right" style={{color: "#45a2fb"}}><i className="fa fa-arrow-right"></i></div> 
+              </Ons.ListItem>
   			)}
     		/>	
           
