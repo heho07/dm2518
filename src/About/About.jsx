@@ -37,7 +37,13 @@ class About extends Component {
               <div className="center">Breathing</div>
             </Ons.Toolbar>
           }>
-            <Ons.Card >Tap me!</Ons.Card>
+            <Ons.Card >
+              <h1>About</h1>
+              <p>This app is made for the course DM2518 at KTH. </p>
+              <h3><b>Authors</b></h3>
+              <p>Herman Högman Ording</p>
+              <p>Mikael Forsmark</p>
+            </Ons.Card>
           </Ons.Page>
       );
   }
