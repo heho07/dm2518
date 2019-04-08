@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-brands-400.da408238.woff"
   },
   {
-    "revision": "cd1cd322f46017c6e826",
+    "revision": "1ae5d48e6743a1daada7",
     "url": "/dm2518/static/css/main.b06264ec.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-brands-400.83e6c29f.svg"
   },
   {
-    "revision": "52f781027b869aebe45e",
-    "url": "/dm2518/static/js/2.a7ea838a.chunk.js"
+    "revision": "cd4add1b47b39322f5e2",
+    "url": "/dm2518/static/js/2.ca4758cd.chunk.js"
   },
   {
     "revision": "8d9ab84bfe87a3f77112a6698cf639fb",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/ionicons.2c159d0d.woff"
   },
   {
-    "revision": "cd1cd322f46017c6e826",
-    "url": "/dm2518/static/js/main.31fdbb7b.chunk.js"
+    "revision": "1ae5d48e6743a1daada7",
+    "url": "/dm2518/static/js/main.36827ffe.chunk.js"
   },
   {
     "revision": "2d0415fa29ea596b7a02c78eddeede20",
@@ -68,12 +68,12 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/Material-Design-Iconic-Font.b351bd62.ttf"
   },
   {
-    "revision": "fdf44bc43e8fa2358bbb7d9165d78455",
-    "url": "/dm2518/static/media/fa-brands-400.fdf44bc4.ttf"
-  },
-  {
     "revision": "e8019d507e8cb51d169ab4f94a0cda12",
     "url": "/dm2518/static/media/fa-brands-400.e8019d50.eot"
+  },
+  {
+    "revision": "fdf44bc43e8fa2358bbb7d9165d78455",
+    "url": "/dm2518/static/media/fa-brands-400.fdf44bc4.ttf"
   },
   {
     "revision": "19e65b89cee273a249fba4c09b951b74",
@@ -104,11 +104,11 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-solid-900.de1d242d.svg"
   },
   {
-    "revision": "52f781027b869aebe45e",
+    "revision": "cd4add1b47b39322f5e2",
     "url": "/dm2518/static/css/2.ce86f8ad.chunk.css"
   },
   {
-    "revision": "89e6b84b75aee53a99a06aa6524a2850",
+    "revision": "93545d1d26ae3b046f148df4db1ddec5",
     "url": "/dm2518/index.html"
   }
 ];
