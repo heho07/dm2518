@@ -30,7 +30,7 @@ class Homescreen extends Component {
        		dataSource= {data}
       		renderRow = {(row, idx) => (
         			<Ons.ListItem onClick = {() => this.handleClick(row)} key = {row}> 
-                <div className="left"> {row} </div>
+                <div className="left" style={{color: "#45a2fb"}}> {row} </div>
                 <div className="right" style={{color: "#45a2fb"}}><i className="fa fa-arrow-right"></i></div> 
               </Ons.ListItem>
   			)}
