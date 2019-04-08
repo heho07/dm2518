@@ -22,16 +22,16 @@ class Homescreen extends Component {
     //    <Link to = "/Yoga"><img src={require("../images/favicon.png")}/></Link>
     let data = ["Yoga", "Meditation", "Breathing", "About"];
     return (
-      <Ons.Page>
-		<Ons.List
-     		dataSource= {data}
-     		renderHeader={() =>
-        		<Ons.ListHeader style={{fontSize: 15}} className="testClass"> Header Text </Ons.ListHeader> }
-    		renderRow = {(row, idx) => (
-      			<Ons.ListItem onClick = {() => this.handleClick()} key = {row}> <Link to = {"/" + row}> {row} </Link> </Ons.ListItem>
-			)}
-  		/>	
-        
+    <Ons.Page>
+  		<Ons.List
+       		dataSource= {data}
+       		renderHeader={() =>
+          		<Ons.ListHeader style={{fontSize: 15}} className="testClass"> Header Text </Ons.ListHeader> }
+      		renderRow = {(row, idx) => (
+        			<Ons.ListItem onClick = {() => this.handleClick()} key = {row}> <Link to = {"/" + row}> {row} </Link> </Ons.ListItem>
+  			)}
+    		/>	
+          
       </Ons.Page>
     );
   }

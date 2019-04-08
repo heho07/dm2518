@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Fullscreen from "react-full-screen";
 import "./Yoga.css";
-
+import { Link } from "react-router-dom";
 // imports for OnsenUI
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import * as ons from 'onsenui'; // This needs to be imported to bootstrap the components.
@@ -30,7 +30,13 @@ class Yoga extends Component {
   render() {
        
     return (
-          <Ons.Page>
+          <Ons.Page 
+          renderToolbar = {() => 
+            <Ons.Toolbar>
+              <div className="left"><Link to = "/" ><Ons.BackButton modifier={this.props.modifier}>Back</Ons.BackButton></Link></div>
+              <div className="center">{this.props.title}</div>
+            </Ons.Toolbar>
+          }>
             <Ons.Button onClick={this.handleClick}>Tap me!</Ons.Button>
           </Ons.Page>
       );
