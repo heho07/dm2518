@@ -13,8 +13,9 @@ import 'onsenui/css/onsen-css-components.css';
 
 class Homescreen extends Component {
     
-	handleClick(){
+	handleClick(newUrl){
 		//ons.notification.alert('clicked');
+    this.props.history.push('/'+newUrl);
 	}
 
   render() {
@@ -28,8 +29,8 @@ class Homescreen extends Component {
   		<Ons.List
        		dataSource= {data}
       		renderRow = {(row, idx) => (
-        			<Ons.ListItem onClick = {() => this.handleClick()} key = {row}> 
-                <div className="left"><Link to = {"/" + row}> {row} </Link></div>
+        			<Ons.ListItem onClick = {() => this.handleClick(row)} key = {row}> 
+                <div className="left"> {row} </div>
                 <div className="right" style={{color: "#45a2fb"}}><i className="fa fa-arrow-right"></i></div> 
               </Ons.ListItem>
   			)}

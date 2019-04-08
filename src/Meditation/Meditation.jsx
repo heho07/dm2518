@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Fullscreen from "react-full-screen";
+//import Fullscreen from "react-full-screen";
 import { Link } from "react-router-dom";
 // imports for OnsenUI
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
@@ -33,17 +33,11 @@ class Meditation extends Component {
     return (
     <div> 
       <h1>Feel Your Feet</h1>
-      <Ons.List 
-        dataSource = {instructions}
-        renderRow = {(row, idx) => (
-          <Ons.ListItem key = {row}>
-            {row}
-          </Ons.ListItem>
-          )
-        }
-        renderFooter = {this.renderFooter}
-        >
-      </Ons.List>
+      <ol>
+        {instructions.map((item, i) =>
+          <li key = {i + item}>{item}</li>
+         )}
+      </ol>
     </div>
     )
   }
@@ -55,11 +49,11 @@ class Meditation extends Component {
           renderToolbar = {() => 
             <Ons.Toolbar>
               <div className="left"><Link to = "/" ><Ons.BackButton modifier={this.props.modifier}>Back</Ons.BackButton></Link></div>
-              <div className="center">{this.props.title}</div>
+              <div className="center">Meditation</div>
             </Ons.Toolbar>
           }>
             <Ons.Card>
-              <img src = "../images/photo-feet.jpg"/>
+              <img src = {require("../images/photo-feet.jpg")} style = {{maxWidth:"100%"}}/>
               {this.instructions()}
             </Ons.Card>
           </Ons.Page>
