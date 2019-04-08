@@ -30,14 +30,14 @@ class About extends Component {
   render() {
        
     return (
-          <Ons.Page 
+        <Ons.Page 
           renderToolbar = {() => 
             <Ons.Toolbar>
               <div className="left"><Link to = "/" ><Ons.BackButton modifier={this.props.modifier}>Back</Ons.BackButton></Link></div>
-              <div className="center">{this.props.title}</div>
+              <div className="center">Breathing</div>
             </Ons.Toolbar>
           }>
-            <Ons.Button onClick={this.handleClick}>Tap me!</Ons.Button>
+            <Ons.Card >Tap me!</Ons.Card>
           </Ons.Page>
       );
   }
