@@ -45,13 +45,7 @@ class Meditation extends Component {
   render() {
        
     return (
-          <Ons.Page 
-          renderToolbar = {() => 
-            <Ons.Toolbar>
-              <div className="left"><Link to = "/" ><Ons.BackButton modifier={this.props.modifier}>Back</Ons.BackButton></Link></div>
-              <div className="center">Meditation</div>
-            </Ons.Toolbar>
-          }>
+          <Ons.Page >
             <Ons.Card>
               <img src = {require("../images/photo-feet.jpg")} style = {{maxWidth:"100%"}}/>
               {this.instructions()}
