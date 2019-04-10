@@ -25,7 +25,7 @@ class Homescreen extends Component {
     let data = ["Yoga", "Meditation", "Breathing", "About"];
     return (
     <Ons.Page modifier="appbcg">
-      <div><h1>Relaxation Exercises</h1></div>
+      <div><h1>Relaxation WOOOO</h1></div>
   		<Ons.List
        		dataSource= {data}
       		renderRow = {(row, idx) => (
