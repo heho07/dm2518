@@ -55,19 +55,19 @@ class Homescreen extends Component {
             renderTabs={(activeIndex, tabbar) => [
               {
                 content: <Ons.Page><About/></Ons.Page> ,
-                tab: <Ons.Tab label="About" icon="md-home" />
+                tab: <Ons.Tab label="About" icon="fa-info-circle" />
               },
               {
                 content: <Ons.Page><Yoga/></Ons.Page>,
-                tab: <Ons.Tab label="Yoga" icon="md-settings" />
+                tab: <Ons.Tab label="Yoga" icon="fa-child" />
               },
               {
                 content: <Ons.Page><Breathing/></Ons.Page>,
-                tab: <Ons.Tab label="Breathing" icon="md-settings" />
+                tab: <Ons.Tab label="Breathing" icon="fa-grin" />
               },
               {
                 content: <Ons.Page><Meditation/></Ons.Page>,
-                tab: <Ons.Tab label="Meditation" icon="md-settings" />
+                tab: <Ons.Tab label="Meditation" icon="fa-heart" />
               }]
             }
           />
