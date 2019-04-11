@@ -27,15 +27,8 @@ class Homescreen extends Component {
     }
   }
     
-	handleClick(newUrl){
-		//ons.notification.alert('clicked');
-    this.props.history.push('/'+newUrl);
-	}
 
   render() {
-//<h1>Welcome to The Map App!</h1>
-  //      <h3>Click on the map below to start the experience&trade;</h3>
-    //    <Link to = "/Yoga"><img src={require("../images/favicon.png")}/></Link>
     let data = ["Yoga", "Meditation", "Breathing", "About"];
 
 
@@ -54,20 +47,20 @@ class Homescreen extends Component {
             index={this.state.index}
             renderTabs={(activeIndex, tabbar) => [
               {
-                content: <Ons.Page><About/></Ons.Page> ,
-                tab: <Ons.Tab label="About" icon="fa-info-circle" />
+                content: <Ons.Page key = "About"><About/></Ons.Page> ,
+                tab: <Ons.Tab label="About" icon="fa-info-circle" key = "AboutTab" />
               },
               {
-                content: <Ons.Page><Yoga/></Ons.Page>,
-                tab: <Ons.Tab label="Yoga" icon="fa-child" />
+                content: <Ons.Page key = "Yoga"><Yoga/></Ons.Page>,
+                tab: <Ons.Tab label="Yoga" icon="fa-child" className = "testTab" key = "YogaTab"/>
               },
               {
-                content: <Ons.Page><Breathing/></Ons.Page>,
-                tab: <Ons.Tab label="Breathing" icon="fa-grin" />
+                content: <Ons.Page  key = "Breathing"><Breathing/></Ons.Page>,
+                tab: <Ons.Tab label="Breathing" icon="fa-grin" key = "BreathingTab" />
               },
               {
-                content: <Ons.Page><Meditation/></Ons.Page>,
-                tab: <Ons.Tab label="Meditation" icon="fa-heart" />
+                content: <Ons.Page  key = "Meditation"><Meditation/></Ons.Page>,
+                tab: <Ons.Tab label="Meditation" icon="fa-heart" key = "MeditationTab" />
               }]
             }
           />
