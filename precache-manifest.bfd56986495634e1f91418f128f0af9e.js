@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-solid-900.2d0415fa.woff"
   },
   {
-    "revision": "576abe4c387b9dc4cb4e",
+    "revision": "b5e97ed2cb3db5e2e91d",
     "url": "/dm2518/static/css/main.d86accdb.chunk.css"
   },
   {
@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/Material-Design-Iconic-Font.d2a55d33.woff"
   },
   {
-    "revision": "b75b4bfe0d58faeced5006c785eaae23",
-    "url": "/dm2518/static/media/fa-solid-900.b75b4bfe.woff2"
-  },
-  {
     "revision": "6814d0e8136d34e313623eb7129d538e",
     "url": "/dm2518/static/media/fa-brands-400.6814d0e8.woff2"
+  },
+  {
+    "revision": "b75b4bfe0d58faeced5006c785eaae23",
+    "url": "/dm2518/static/media/fa-solid-900.b75b4bfe.woff2"
   },
   {
     "revision": "2c159d0d05473040b53ec79df8797d32",
@@ -60,16 +60,12 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-brands-400.da408238.woff"
   },
   {
-    "revision": "576abe4c387b9dc4cb4e",
-    "url": "/dm2518/static/js/main.1ac4ba9e.chunk.js"
+    "revision": "b5e97ed2cb3db5e2e91d",
+    "url": "/dm2518/static/js/main.a2d30b35.chunk.js"
   },
   {
     "revision": "b351bd62abcd96e924d9f44a3da169a7",
     "url": "/dm2518/static/media/Material-Design-Iconic-Font.b351bd62.ttf"
-  },
-  {
-    "revision": "e8019d507e8cb51d169ab4f94a0cda12",
-    "url": "/dm2518/static/media/fa-brands-400.e8019d50.eot"
   },
   {
     "revision": "fdf44bc43e8fa2358bbb7d9165d78455",
@@ -78,6 +74,10 @@ self.__precacheManifest = [
   {
     "revision": "19e65b89cee273a249fba4c09b951b74",
     "url": "/dm2518/static/media/ionicons.19e65b89.eot"
+  },
+  {
+    "revision": "e8019d507e8cb51d169ab4f94a0cda12",
+    "url": "/dm2518/static/media/fa-brands-400.e8019d50.eot"
   },
   {
     "revision": "ba2a91dc95e6cfdc4b2a186a7ba83e29",
@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/dm2518/static/css/2.02b6a8fa.chunk.css"
   },
   {
-    "revision": "1ec2f85de66876992175a42d777a1e4a",
+    "revision": "bb3dd19527d3624db3fef2c20a0817c3",
     "url": "/dm2518/index.html"
   }
 ];
