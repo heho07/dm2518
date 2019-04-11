@@ -23,6 +23,13 @@
   color: #61dafb;
 }
 
+.App-list-item{
+  font-size: 30;
+  color: '#45a2fb';
+}
+
+*{font-family: "Papyrus"}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

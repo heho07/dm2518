@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import "./Homescreen.css";
 
-// imports for OnsenUI
+// imports for onsenuiUI
 import * as Ons from 'react-onsenui'; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import * as ons from 'onsenui'; // This needs to be imported to bootstrap the components.
 // Webpack CSS import
@@ -19,9 +19,6 @@ class Homescreen extends Component {
 	}
 
   render() {
-//<h1>Welcome to The Map App!</h1>
-  //      <h3>Click on the map below to start the experience&trade;</h3>
-    //    <Link to = "/Yoga"><img src={require("../images/favicon.png")}/></Link>
     let data = ["Yoga", "Meditation", "Breathing", "About"];
     return (
     <Ons.Page modifier="appbcg">
@@ -30,8 +27,8 @@ class Homescreen extends Component {
        		dataSource= {data}
       		renderRow = {(row, idx) => (
         			<Ons.ListItem onClick = {() => this.handleClick(row)} key = {row}> 
-                <div className="left" style={{color: "#45a2fb"}}> {row} </div>
-                <div className="right" style={{color: "#45a2fb"}}><i className="fa fa-arrow-right"></i></div> 
+                <div className="left list-item-style"> {row} </div>
+                <div className="right list-item-style"><i className="fa fa-arrow-right"></i></div> 
               </Ons.ListItem>
   			)}
     		/>	
