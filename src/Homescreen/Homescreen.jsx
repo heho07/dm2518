@@ -38,7 +38,7 @@ class Homescreen extends Component {
     // Ons.Tab är den ruta som man kan klicka på i tabbar där nere och "label" är vad som ska stå där.
     // TODO: snygga till och byta icon
     return (
-        <Ons.Page>  
+        <Ons.Page id="background">  
           <Ons.Tabbar
             onPreChange={({index}) => this.setState({index:index})}
             onPostChange={() => console.log('postChange')}

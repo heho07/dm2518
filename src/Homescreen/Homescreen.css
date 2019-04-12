@@ -1,4 +1,4 @@
-.page--appbcg__background {
+#background .page__background {
 	background-image: url('../images/relaxing-background.jpg');
 	background-size: cover;
 	background-position: center;
