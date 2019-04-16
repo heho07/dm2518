@@ -8,21 +8,21 @@ app.beaconRegions =
 [
 	{
 		// konstsalen
-		id: 'page-feet',
+		id: 'konstsalen',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
 		major: 22460,
 		minor: 60720
 	},
 	{
 		// musiksalen
-		id: 'page-shoulders',
+		id: 'musiksalen',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
 		major: 56506,
 		minor: 14941
 	},
 	{
 		// sportsalen
-		id: 'page-face',
+		id: 'sportsalen',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
 		major: 64748,
 		minor: 20535
@@ -124,6 +124,8 @@ app.didRangeBeaconsInRegion = function(pluginResult)
 	if ((beacon.proximity == 'ProximityImmediate' || beacon.proximity == 'ProximityNear')
 		&& app.currentPage == 'page-default')
 	{
+		console.log("FOUND SOMETHING IMMEDIATE OR NEAR");
+		console.log(pageId);
 		app.gotoPage(pageId)
 		return
 	}
