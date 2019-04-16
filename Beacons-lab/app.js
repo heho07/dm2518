@@ -9,14 +9,14 @@ app.beaconRegions =
 	{
 		id: 'page-feet',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-		major: 3560,
-		minor: 36810
+		major: 22460,
+		minor: 60720
 	},
 	{
 		id: 'page-shoulders',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-		major: 57356,
-		minor: 14220
+		major: 56506,
+		minor: 14941
 	},
 	{
 		id: 'page-face',
@@ -45,21 +45,21 @@ app.onDeviceReady = function()
 	// Specify a shortcut for the location manager that
 	// has the iBeacon functions.
 	window.locationManager = cordova.plugins.locationManager
-
+	// console.log("scanning for beacons");
 	// Start tracking beacons!
 	app.startScanForBeacons()
 }
 
 app.startScanForBeacons = function()
 {
-	//console.log('startScanForBeacons')
+	// console.log('startScanForBeacons')
 
 	// The delegate object contains iBeacon callback functions.
 	var delegate = new cordova.plugins.locationManager.Delegate()
-
+// console.log("delegate: " + delegate);
 	delegate.didDetermineStateForRegion = function(pluginResult)
 	{
-		//console.log('didDetermineStateForRegion: ' + JSON.stringify(pluginResult))
+		console.log('didDetermineStateForRegion: ' + JSON.stringify(pluginResult))
 	}
 
 	delegate.didStartMonitoringForRegion = function(pluginResult)
@@ -117,7 +117,7 @@ app.didRangeBeaconsInRegion = function(pluginResult)
 	//console.log('ranged beacon: ' + pageId + ' ' + beacon.proximity)
 
 	// If the beacon is close and represents a new page, then show the page.
-	if ((beacon.proximity == 'ProximityImmediate')
+	if ((beacon.proximity == 'ProximityImmediate' || beacon.proximity == 'ProximityNear')
 		&& app.currentPage == 'page-default')
 	{
 		app.gotoPage(pageId)
