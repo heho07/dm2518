@@ -133,6 +133,8 @@ app.didRangeBeaconsInRegion = function(pluginResult)
 	if ((beacon.proximity == 'ProximityFar')
 		&& app.currentPage == pageId)
 	{
+		console.log("FOUND SOMETHING FAR AWAY");
+		console.log(pageId);
 		app.gotoPage('page-default')
 		return
 	}
