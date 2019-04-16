@@ -7,23 +7,27 @@ var app = {}
 app.beaconRegions =
 [
 	{
+		// konstsalen
 		id: 'page-feet',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
 		major: 22460,
 		minor: 60720
 	},
 	{
+		// musiksalen
 		id: 'page-shoulders',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
 		major: 56506,
 		minor: 14941
 	},
 	{
+		// sportsalen
 		id: 'page-face',
 		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-		major: 57272,
-		minor: 20467
+		major: 64748,
+		minor: 20535
 	}
+	// last one is not yet changed
 ]
 
 // Currently displayed page.
@@ -126,7 +130,7 @@ app.didRangeBeaconsInRegion = function(pluginResult)
 
 	// If the beacon represents the current page but is far away,
 	// then show the default page.
-	if ((beacon.proximity == 'ProximityFar' || beacon.proximity == 'ProximityNear')
+	if ((beacon.proximity == 'ProximityFar')
 		&& app.currentPage == pageId)
 	{
 		app.gotoPage('page-default')
