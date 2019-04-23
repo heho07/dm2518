@@ -3,22 +3,27 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=yes,
-		initial-scale=1.0" />
+	initial-scale=1.0" />
+
+	<!-- Importing Onsen-UI -->
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 
 	<title>Relaxation iBeacons</title>
 
 	<style>
-	@import 'page.css';
+		@import 'page.css';
 	</style>
 
 	<script>
 	// Redirect console if running from Evothings Workbench.
 	if (window.hyper) { console.log = hyper.log }
-	</script>
+</script>
 </head>
 
 <body>
-	<div class="my-page" id="page-default">
+	<ons-page class="my-page" id="page-default">
 		<div class="my-header">
 			<img class="my-header-image" src="photos/photo-default.jpg" />
 			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
@@ -26,11 +31,65 @@
 		<div class="my-content">
 			<h1>Relaxation iBeacons</h1>
 			<p>Please move within range of the Relaxation iBeacons.</p>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/W3B2C0nNpFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/W3B2C0nNpFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<button onClick = "QuizInstance.myFunction()">testButton</button>
 		</div>
-	</div>
 
-	<div class="my-page" id="konstsalen">
+
+		<!-- Använder en cool pop-up svarslista
+		https://onsen.io/v2/api/js/ons-action-sheet.html -->
+		<ons-card>
+			<p style="text-align: center">
+				Lorem ipsum.....
+			</p>
+			<center>
+				<ons-button onclick="QuizInstance.showTemplate()">Create from template</ons-button>
+			</center>
+		</ons-card>
+
+		<!-- Using radio buttons 
+		https://onsen.io/v2/api/js/ons-radio.html-->
+		<ons-card>
+			<p>Lorem ipsum..</p>
+			<form id = "testForm1">
+				<ons-list>
+					<ons-list-item tappable>
+						<label class="left">
+							<ons-radio name="color" input-id="radio-1" checked></ons-radio>
+						</label>
+						<label for="radio-1" class="center">
+							Answer A
+						</label>
+					</ons-list-item>
+					<ons-list-item tappable>
+						<label class="left">
+							<ons-radio name="color" input-id="radio-2"></ons-radio>
+						</label>
+						<label for="radio-2" class="center">
+							Answer B
+						</label>
+					</ons-list-item>
+					<button type = "submit" class = "button">Answer!</button>
+				</ons-list>
+			</form>
+		</ons-card>
+
+		<!-- Using drop-down menu 
+		https://onsen.io/v2/api/js/ons-select.html-->
+		<ons-card>
+			<p>Lorem ipsum...</p>
+			<form id = "testForm2">
+				<ons-select id="choose-sel" onchange="editSelects(event)">
+					<option value="A">Answer A</option>
+					<option value="B">Answer B</option>
+					<option value="C">Answer C</option>
+				</ons-select>
+				<button type = "submit" class = "button">Answer!</button>
+			</form>
+		</ons-card>
+	</ons-page>
+
+	<ons-page class="my-page" id="konstsalen">
 		<div class="my-header">
 			<img class="my-header-image" src="photos/photo-feet.jpg" />
 			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
@@ -50,10 +109,10 @@
 				<li>Head.</li>
 				<li>Feel the connection between the top of the head and the feet.</li>
 			</ul>
- -->		</div>
-	</div>
+		-->		</div>
+	</ons-page>
 
-	<div class="my-page" id="musiksalen">
+	<ons-page class="my-page" id="musiksalen">
 		<div class="my-header">
 			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
 		</div>
@@ -70,11 +129,11 @@
 				<li>Lift the other shoulder and release it.</li>
 				<li>Alternate three more times on each side.</li>
 				<li>Experience the breath flowing in and out of the body.</li>
-			 </ul>-->
+			</ul>-->
 		</div>
-	</div>
+	</ons-page>
 
-	<div class="my-page" id="sportsalen">
+	<ons-page class="my-page" id="sportsalen">
 		<div class="my-header">
 			<img class="my-header-image" src="photos/photo-face.jpg" />
 			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
@@ -97,10 +156,11 @@
 				<li>The space surrounding the head.</li>
 			</ul>
 		</div>
-	</div>
+	</ons-page>
 
 	<script src="lib/jquery.js"></script>
 	<script src="cordova.js"></script>
 	<script src="app.js"></script>
+	<script src = "Quiz.js"></script>
 </body>
 </html>
