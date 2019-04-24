@@ -28,7 +28,8 @@
 			<img class="my-header-image" src="photos/photo-vinyl.jpg" style="max-width: 100% ;width: auto; height: auto;"/>
 		</div>
 		<div class="my-content" style="text-align: center">
-			<h1>Beacon Culture Quiz</h1>
+			
+			<h1>Beacon Culture Quiz <span class = "result"></span></h1>
 			<p>Welcome!</p>
 			<p>Please move around in Konsthallen, Musikhallen and Sporthallen to learn more about the different topics.</p>
 		</div>
@@ -41,13 +42,13 @@
 				Lorem ipsum.....
 			</p>
 			<center>
-				<ons-button onclick="QuizInstance.showTemplate('Musik')">Create from template</ons-button>
+				<ons-button onclick="QuizInstance.showTemplate('Music')">Create from template</ons-button>
 			</center>
 		</ons-card>
 
 		<!-- Using radio buttons 
 		https://onsen.io/v2/api/js/ons-radio.html-->
-		<ons-card>
+	<!-- 	<ons-card>
 			<p>Lorem ipsum..</p>
 			<form id = "testForm1">
 				<ons-list>
@@ -70,11 +71,11 @@
 					<button type = "submit" class = "button">Answer!</button>
 				</ons-list>
 			</form>
-		</ons-card>
+		</ons-card> -->
 
 		<!-- Using drop-down menu 
 		https://onsen.io/v2/api/js/ons-select.html-->
-		<ons-card>
+	<!-- 	<ons-card>
 			<p>Lorem ipsum...</p>
 			<form id = "testForm2">
 				<ons-select id="choose-sel" onchange="editSelects(event)">
@@ -84,7 +85,7 @@
 				</ons-select>
 				<button type = "submit" class = "button">Answer!</button>
 			</form>
-		</ons-card>
+		</ons-card> -->
 	</ons-page>
 
 	<ons-page class="my-page" id="konstsalen">
@@ -92,7 +93,7 @@
 			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
 		</div>
 		<div class="my-content">
-			<h1>The Art Hall</h1>
+			<h1>The Art Hall <span class = "result"></span></h1>
 			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/bkWHrWw5yTg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<p>Since you are located in the Art Hall, you're now going to learn a little bit about the origins of art.</p>
 			<p>Click the "Play"-button above to get educated!</p>
@@ -103,10 +104,10 @@
 
 	<ons-page class="my-page" id="musiksalen">
 		<div class="my-header">
-			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
+			<!-- <img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" /> -->
 		</div>
 		<div class="my-content">
-			<h1 style="text-align: center">The Music Hall</h1>
+			<h1 style="text-align: center">The Music Hall <span class = "result"></span></h1>
 			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/OW3JuoVRSHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<p>Since you are located in the Music Hall, you're now going to learn a little bit about the origins of music.</p>
 			<p>Click the "Play"-button above to get educated!</p>
@@ -128,7 +129,7 @@
 			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
 		</div>
 		<div class="my-content">
-			<h1 style="text-align: center">The Sports Hall</h1>
+			<h1 style="text-align: center">The Sports Hall <span class = "result"></span></h1>
 			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/roZ3eShR1Cw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<p>Since you are located in the Sports Hall, you're now going to learn a little bit about the origins of sports.</p>
 			<p>Click the "Play"-button above to get educated!</p>

@@ -2,8 +2,8 @@ class Quiz {
 	
 	constructor(){
 		this.Quiz = [{
-			room: "Sport"
-			question: "What material are tennis rackets made of?"
+			room: "Sport",
+			question: "What material are tennis rackets made of?",
 			answers: [
 				"Plastic waste",
 				"Iron",
@@ -12,7 +12,10 @@ class Quiz {
 						label: 'Cancel', //index 3, avbryter
 						icon: 'md-close'
 					}
-			],
+				],
+			correctAnswer:2,
+			userCorrectAnswer: false
+			},
 			{
 				room: "Music",
 				question: "When did Jean Baptiste Lully release his work 'Armide Ouverture'?",
@@ -24,7 +27,9 @@ class Quiz {
 						label: 'Cancel', //index 3, avbryter
 						icon: 'md-close'
 					}
-				]
+				],
+			correctAnswer:0,
+			userCorrectAnswer: false
 			},
 			{
 				room: "Art",
@@ -37,9 +42,11 @@ class Quiz {
 						label: 'Cancel', //index 3, avbryter
 						icon: 'md-close'
 					}
-				]
+				],
+			correctAnswer:1,
+			userCorrectAnswer: false
 			}
-		}]
+		];
 		this.testQuiz = [{
 			room: "Musik",
 			question: "How much wood would a wood chuck chuck if a wood chuck could chuck wood?",
@@ -54,24 +61,47 @@ class Quiz {
 			],
 			correctAnswer: 0,
 		}];
-		this.testForm1 = document.getElementById("testForm1");
-		this.testForm1.addEventListener("submit", (event) => {
-			event.preventDefault();
-			this.myFunction(event);
-		});
+		// this.testForm1 = document.getElementById("testForm1");
+		// this.testForm1.addEventListener("submit", (event) => {
+		// 	event.preventDefault();
+		// 	this.myFunction(event);
+		// });
 
-		this.testForm2 = document.getElementById("testForm2");
-		this.testForm2.addEventListener("submit", (event) => {
-			event.preventDefault();
-			this.myFunction(event);
-		})
+		// this.testForm2 = document.getElementById("testForm2");
+		// this.testForm2.addEventListener("submit", (event) => {
+		// 	event.preventDefault();
+		// 	this.myFunction(event);
+		// });
+		this.changeResult();
+		// this.result = 0;
+		// this.maxCorrect = this.Quiz.length;
+
+	}
+
+	changeResult(){
+		let resultSpan = document.getElementsByClassName("result");
+		let result = 0;
+		let maxCorrect = this.Quiz.length;
+		this.Quiz.forEach((question) => {
+			if (question.userCorrectAnswer){
+				result++;
+			}
+		});
+		console.log(resultSpan);
+		// resultSpan.innerHTML = ("<p>TEST</p>");
+		for (var i = resultSpan.length - 1; i >= 0; i--) {
+			resultSpan[i].innerHTML = ("<p>" + result + " / " + maxCorrect + "</p>");
+		}
+		// resultSpan.innerHTML = ("<p>" + result + " / " + maxCorrect + "</p>");
 
 	}
 
 	showTemplate(room){
+		console.log(this.Quiz);
 		let currentQuestion;
-		for (const question of this.testQuiz){
-			if (question.Room === room){
+		for (const question of this.Quiz){
+
+			if (question.room === room){
 				currentQuestion = question;
 				break;
 			}
@@ -88,6 +118,8 @@ class Quiz {
 			console.log('index: ', index);
 			if (index === currentQuestion.correctAnswer) {
 				console.log("CORRECT ANSWER");
+				currentQuestion.userCorrectAnswer = true;
+				this.changeResult();
 			} 
 			else if (index != -1 && index != 3){
 				console.log("FALSE");
