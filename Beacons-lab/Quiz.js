@@ -113,9 +113,11 @@ class Quiz {
 			if (index === currentQuestion.correctAnswer) {
 				console.log("CORRECT ANSWER");
 				currentQuestion.userCorrectAnswer = true;
+				alert('Correct! Woop woop');
 				this.changeResult();
 			} 
 			else if (index != -1 && index != 3){
+				alert('Wrong answer! Boo');
 				console.log("FALSE");
 			}
 		});
