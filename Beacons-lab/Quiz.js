@@ -61,20 +61,8 @@ class Quiz {
 			],
 			correctAnswer: 0,
 		}];
-		// this.testForm1 = document.getElementById("testForm1");
-		// this.testForm1.addEventListener("submit", (event) => {
-		// 	event.preventDefault();
-		// 	this.myFunction(event);
-		// });
 
-		// this.testForm2 = document.getElementById("testForm2");
-		// this.testForm2.addEventListener("submit", (event) => {
-		// 	event.preventDefault();
-		// 	this.myFunction(event);
-		// });
 		this.changeResult();
-		// this.result = 0;
-		// this.maxCorrect = this.Quiz.length;
 
 	}
 
@@ -89,9 +77,15 @@ class Quiz {
 		});
 		console.log(resultSpan);
 		// resultSpan.innerHTML = ("<p>TEST</p>");
-		for (var i = resultSpan.length - 1; i >= 0; i--) {
-			resultSpan[i].innerHTML = ("<p>" + result + " / " + maxCorrect + "</p>");
+		if (result === maxCorrect) {
+			resultSpan[i].innerHTML = ("<p>" + result + " / " + maxCorrect + "p</p><br/><p>You win!</p>");
 		}
+		else {	
+			for (var i = resultSpan.length - 1; i >= 0; i--) {
+				resultSpan[i].innerHTML = ("<p>" + result + " / " + maxCorrect + "p</p>");
+			}
+		}
+
 		// resultSpan.innerHTML = ("<p>" + result + " / " + maxCorrect + "</p>");
 
 	}
