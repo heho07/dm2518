@@ -50,7 +50,7 @@ class Quiz {
 			if (index === currentQuestion.correctAnswer) {
 				console.log("CORRECT ANSWER");
 			} 
-			else{
+			else if (index != -1 && index != 3){
 				console.log("FALSE");
 			}
 		});
