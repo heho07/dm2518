@@ -2,13 +2,18 @@ class Quiz {
 	
 	constructor(){
 		this.testQuiz = [{
+			Room: "Musik",
 			question: "How much wood would a wood chuck chuck if a wood chuck could chuck wood?",
-			answers: {
-				a: "a woodchuck could chuck",
-				b: "this is wrong",
-				c: "this is also wrong",
-			},
-			correctAnswer: "a",
+			answers: [
+				"a woodchuck could chuck",
+				"this is wrong",
+				"this is also wrong",
+				{
+					label: 'Cancel', //index 3, avbryter
+					icon: 'md-close'
+				}
+			],
+			correctAnswer: 0,
 		}];
 		this.testForm1 = document.getElementById("testForm1");
 		this.testForm1.addEventListener("submit", (event) => {
@@ -24,24 +29,31 @@ class Quiz {
 
 	}
 
-	showTemplate(){
+	showTemplate(room){
+		let currentQuestion;
+		for (const question of this.testQuiz){
+			if (question.Room === room){
+				currentQuestion = question;
+				break;
+			}
+		}
+	
+		console.log(currentQuestion.answers);
 		//klickar man utanför -> index 0
 		ons.openActionSheet({
-			title: 'Answer',
+			title: currentQuestion.question,
 			cancelable: true,
-			buttons: [
-			'Answer A', //index 0
-			'Answer B', // index 1
-			{
-				label: 'Answer C', //index 2
-				//modifier: 'destructive' // om den ska vara röd
-			},
-			{
-				label: 'Cancel', //index 3, avbryter
-				icon: 'md-close'
+			buttons: currentQuestion.answers,
+			
+		}).then( (index) => { 
+			console.log('index: ', index);
+			if (index === currentQuestion.correctAnswer) {
+				console.log("CORRECT ANSWER");
+			} 
+			else{
+				console.log("FALSE");
 			}
-			]
-		}).then( (index) => { console.log('index: ', index) });
+		});
 	}
 
 	myFunction(event){
