@@ -1,8 +1,47 @@
 class Quiz {
 	
 	constructor(){
+		this.Quiz = [{
+			room: "Sport"
+			question: "What material are tennis rackets made of?"
+			answers: [
+				"Plastic waste",
+				"Iron",
+				"Carbon composite",
+					{
+						label: 'Cancel', //index 3, avbryter
+						icon: 'md-close'
+					}
+			],
+			{
+				room: "Music",
+				question: "When did Jean Baptiste Lully release his work 'Armide Ouverture'?",
+				answers: [
+					"1650",
+					"1670",
+					"1730",
+					{
+						label: 'Cancel', //index 3, avbryter
+						icon: 'md-close'
+					}
+				]
+			},
+			{
+				room: "Art",
+				question: "What was a common theme in arts during the middle ages?",
+				answers: [
+					"Animals",
+					"Religious figures",
+					"Royalties",
+					{
+						label: 'Cancel', //index 3, avbryter
+						icon: 'md-close'
+					}
+				]
+			}
+		}]
 		this.testQuiz = [{
-			Room: "Musik",
+			room: "Musik",
 			question: "How much wood would a wood chuck chuck if a wood chuck could chuck wood?",
 			answers: [
 				"a woodchuck could chuck",
