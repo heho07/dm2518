@@ -78,7 +78,9 @@ class Quiz {
 		console.log(resultSpan);
 		// resultSpan.innerHTML = ("<p>TEST</p>");
 		if (result === maxCorrect) {
-			resultSpan[i].innerHTML = ("<p>" + result + " / " + maxCorrect + "p</p><br/><p>You win!</p>");
+			for (var i = resultSpan.length - 1; i >= 0; i--) {
+				resultSpan[i].innerHTML = ("<p>" + result + " / " + maxCorrect + "p</p><br/><p>You win!</p>");
+			}
 		}
 		else {	
 			for (var i = resultSpan.length - 1; i >= 0; i--) {
