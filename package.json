@@ -5,6 +5,8 @@
   "homepage": "https://heho07.github.io/dm2518",
   "dependencies": {
     "onsenui": "^2.10.8",
+    "pubnub": "^4.23.0",
+    "pubnub-react": "^1.2.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-full-screen": "^0.2.4",
