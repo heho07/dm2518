@@ -13,10 +13,12 @@ export default class Send extends Component {
         super(props);
     }
 
+
     render() {
         return (
             
           <Ons.Page>
+    <button onClick = {() => this.props.showCoords()}>visa koordinater</button>
             <button onClick = {() => this.props.onSend("hej")}>skick hej</button>
         </Ons.Page>
         );

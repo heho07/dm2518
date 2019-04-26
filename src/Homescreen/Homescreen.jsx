@@ -96,30 +96,6 @@ class Homescreen extends Component {
         });
     }
 
-    // getQuadrantMessages(){
-    //   if(!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled){
-    //     console.log("Enable geolocation!");
-    //     return this.state.messages;
-    //   }
-    //   let coords = this.props.coords;
-    //   let lat = coords.latitude;
-    //   let long = coords.longitude;
-    //   if (0<=z && z<=90){
-    //     return this.state.messagesQ1;
-    //   }
-    //   else if ( 90<z && z<=180 ){
-    //     return this.state.messagesQ2;
-    //   }
-    //   else if (180<z && z<=270){
-    //     return this.state.messagesQ3;
-    //   }
-    //   else if ( 270<z && z <360){
-    //     return this.state.messagesQ4;
-    //   }
-    //   else{
-    //     return this.state.messages;
-    //   }
-    // }
  
     send(msg){
         let z = this.state.orientation;
@@ -176,6 +152,9 @@ class Homescreen extends Component {
         console.log(this.state.messages);
     }
 
+    showCoords(){
+      console.log(this.props.coords);
+    }
 
     render() {
         // const messages = this.pubnub.getMessage('channel1');
@@ -193,7 +172,8 @@ class Homescreen extends Component {
                 {
                   content: (
                     <Ons.Page key="Feed">
-                     <Send onSend = {(msg) => this.send(msg)} />
+                     <Send onSend = {(msg) => this.send(msg)} showCoords = {() => this.showCoords()}/>
+                    
                     </Ons.Page>
                   ),
                   tab: <Ons.Tab label="Feed" icon="fa-headphones" key="FeedTab" />
