@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-brands-400.da408238.woff"
   },
   {
-    "revision": "5bd81f3ad3c188fe8ffc",
+    "revision": "2364a125c8216a7f6a86",
     "url": "/dm2518/static/css/main.9fcea237.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-solid-900.de1d242d.svg"
   },
   {
-    "revision": "8a79f232b6c8fc1e941a",
-    "url": "/dm2518/static/js/2.54b82d4d.chunk.js"
+    "revision": "0bfab73c3d90bff38f43",
+    "url": "/dm2518/static/js/2.3d2ec0de.chunk.js"
   },
   {
     "revision": "8d9ab84bfe87a3f77112a6698cf639fb",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/ionicons.2c159d0d.woff"
   },
   {
-    "revision": "5bd81f3ad3c188fe8ffc",
-    "url": "/dm2518/static/js/main.a3d3849a.chunk.js"
+    "revision": "2364a125c8216a7f6a86",
+    "url": "/dm2518/static/js/main.124a49fe.chunk.js"
   },
   {
     "revision": "2d0415fa29ea596b7a02c78eddeede20",
@@ -68,12 +68,12 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/Material-Design-Iconic-Font.b351bd62.ttf"
   },
   {
-    "revision": "e8019d507e8cb51d169ab4f94a0cda12",
-    "url": "/dm2518/static/media/fa-brands-400.e8019d50.eot"
-  },
-  {
     "revision": "fdf44bc43e8fa2358bbb7d9165d78455",
     "url": "/dm2518/static/media/fa-brands-400.fdf44bc4.ttf"
+  },
+  {
+    "revision": "e8019d507e8cb51d169ab4f94a0cda12",
+    "url": "/dm2518/static/media/fa-brands-400.e8019d50.eot"
   },
   {
     "revision": "19e65b89cee273a249fba4c09b951b74",
@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-regular-400.ba2a91dc.svg"
   },
   {
-    "revision": "132e9759d93e4eefd7cdde0d7a322991",
-    "url": "/dm2518/static/media/fa-solid-900.132e9759.ttf"
-  },
-  {
     "revision": "ea363ed422723673917901680be9b37c",
     "url": "/dm2518/static/media/fa-solid-900.ea363ed4.eot"
+  },
+  {
+    "revision": "132e9759d93e4eefd7cdde0d7a322991",
+    "url": "/dm2518/static/media/fa-solid-900.132e9759.ttf"
   },
   {
     "revision": "dd4781d1acc57ba4c4808d1b44301201",
@@ -104,11 +104,11 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-brands-400.83e6c29f.svg"
   },
   {
-    "revision": "8a79f232b6c8fc1e941a",
+    "revision": "0bfab73c3d90bff38f43",
     "url": "/dm2518/static/css/2.e4815912.chunk.css"
   },
   {
-    "revision": "b3619c027f18419d0d1448eef3374719",
+    "revision": "50406d74ac62a3ffe553a2faef67589d",
     "url": "/dm2518/index.html"
   }
 ];
