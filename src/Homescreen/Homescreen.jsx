@@ -37,6 +37,17 @@ export default class Homescreen extends Component {
         });
     }
  
+    testSend(){
+
+        this.pubnub.publish({
+          message: "test",
+          channel: 'channel1'
+        });
+        console.log(window.DeviceOrientationEvent);
+    }
+
+
+
     render() {
         const messages = this.pubnub.getMessage('channel1');
         return (
@@ -44,6 +55,7 @@ export default class Homescreen extends Component {
                 <ul>
                     {messages.map((m, index) => <li key={'message' + index}>{m.message}</li>)}
                 </ul>
+                <button onClick = {() => this.testSend()}>test send</button>
             </div>
         );
     }
