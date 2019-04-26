@@ -8,7 +8,7 @@ import * as ons from "onsenui"; // This needs to be imported to bootstrap the co
 import "onsenui/css/onsenui.css";
 import "onsenui/css/onsen-css-components.css";
 
-export default class Homescreen extends Component {
+export default class Send extends Component {
     constructor(props) {
         super(props);
         this.state = {
