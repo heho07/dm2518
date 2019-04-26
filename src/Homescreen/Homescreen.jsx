@@ -5,14 +5,14 @@ import keys from "./keys";
 import Send from "./Send";
 import Receive from "./Receive";
 
-
+import {geolocated} from 'react-geolocated';
 import * as Ons from "react-onsenui"; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import * as ons from "onsenui"; // This needs to be imported to bootstrap the components.
 // Webpack CSS import
 import "onsenui/css/onsenui.css";
 import "onsenui/css/onsen-css-components.css";
 
-export default class Homescreen extends Component {
+class Homescreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,6 +22,7 @@ export default class Homescreen extends Component {
           messagesQ2:[],
           messagesQ3:[],
           messagesQ4:[],
+          messagesToDisplay:[],
         };
         this.pubnub = new PubNubReact({
             publishKey: keys.publish,
@@ -46,29 +47,47 @@ export default class Homescreen extends Component {
         this.pubnub.getMessage('channel1', (msg) => {
             console.log(msg);
             this.state.messages.push(msg);
+            if(!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled){
+              console.log("Enable geolocation!");
+              return
+            }
+            let coords = this.props.coords;
+            let lat = coords.latitude;
+            let long = coords.longitude;
+            if (lat === null || long === null) {
+              return
+            }
             if (msg.message.biggerLat && msg.message.biggerLong) {
-              this.state.messagesQ1.push(msg);
+              if (lat >= msg.message.coords.lat && long >= msg.message.coords.long) {
+                this.state.messagesToDisplay.push(msg);
+              }
             }
             else if (!msg.message.biggerLat && msg.message.biggerLong){
-              this.state.messagesQ2.push(msg);
+              if (lat < msg.message.coords.lat && long >= msg.message.coords.long) {
+                this.state.messagesToDisplay.push(msg);
+              }
             }
             else if (!msg.message.biggerLat && !msg.message.biggerLong){
-              this.state.messagesQ3.push(msg);
+              if (lat < msg.message.coords.lat && long < msg.message.coords.long) {
+                this.state.messagesToDisplay.push(msg);
+              }
             }
             else if (msg.message.biggerLat && !msg.message.biggerLong){
-              this.state.messagesQ4.push(msg);
+              if (lat >= msg.message.coords.lat && long < msg.message.coords.long) {
+                this.state.messagesToDisplay.push(msg);
+              }
             }
             else{
               console.log("unknown direction :/");
             }
         });
  
-        this.pubnub.getStatus((st) => {
-            this.pubnub.publish({
-                message: 'hello world from react',
-                channel: 'channel1'
-            });
-        });
+        // this.pubnub.getStatus((st) => {
+        //     this.pubnub.publish({
+        //         message: 'hello world from react',
+        //         channel: 'channel1'
+        //     });
+        // });
     }
  
     componentWillUnmount() {
@@ -77,24 +96,30 @@ export default class Homescreen extends Component {
         });
     }
 
-    getQuadrantMessages(){
-      let z = this.state.orientation;
-      if (0<=z && z<=90){
-        return this.state.messagesQ1;
-      }
-      else if ( 90<z && z<=180 ){
-        return this.state.messagesQ2;
-      }
-      else if (180<z && z<=270){
-        return this.state.messagesQ3;
-      }
-      else if ( 270<z && z <360){
-        return this.state.messagesQ4;
-      }
-      else{
-        return this.state.messages;
-      }
-    }
+    // getQuadrantMessages(){
+    //   if(!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled){
+    //     console.log("Enable geolocation!");
+    //     return this.state.messages;
+    //   }
+    //   let coords = this.props.coords;
+    //   let lat = coords.latitude;
+    //   let long = coords.longitude;
+    //   if (0<=z && z<=90){
+    //     return this.state.messagesQ1;
+    //   }
+    //   else if ( 90<z && z<=180 ){
+    //     return this.state.messagesQ2;
+    //   }
+    //   else if (180<z && z<=270){
+    //     return this.state.messagesQ3;
+    //   }
+    //   else if ( 270<z && z <360){
+    //     return this.state.messagesQ4;
+    //   }
+    //   else{
+    //     return this.state.messages;
+    //   }
+    // }
  
     send(msg){
         let z = this.state.orientation;
@@ -125,11 +150,26 @@ export default class Homescreen extends Component {
         }
         console.log(z);
         console.log(biggerLong);
+        let coords;
+        if(!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled){
+          coords = {
+            lat:null,
+            long:null,
+          }
+          console.log(this.props.coords);
+        }
+        else{
+          coords = {
+            lat: this.props.coords.latitude,
+            long: this.props.coords.longitude,
+          }
+        }
         this.pubnub.publish({
           message: {
             content:msg,
             biggerLat:biggerLat,
             biggerLong:biggerLong,
+            coords:coords,
           },
           channel: 'channel1',          
         });
@@ -162,7 +202,10 @@ export default class Homescreen extends Component {
                   content: (
                     <Ons.Page key="Upload">
                       <Receive 
-                        messages = {this.getQuadrantMessages()} 
+                        messages = { 
+                          (!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled) ?
+                            this.state.messages : this.state.messagesToDisplay
+                        } 
                         orientation = {this.state.orientation} />
                     </Ons.Page>
                   ),
@@ -174,7 +217,11 @@ export default class Homescreen extends Component {
         );
     }
 }
-                      // <p>{this.state.orientation}</p>
-                      //   <ul>
-                      //       {messages.map((m, index) => <li key={'message' + index}>{m.message}</li>)}
-                      //   </ul>
+                
+// initializes the geolocated thing and sets Homescreen aas it's child
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(Homescreen);
