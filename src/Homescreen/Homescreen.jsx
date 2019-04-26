@@ -5,11 +5,21 @@ import keys from "./keys";
 export default class Homescreen extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          orientation: "funkar inte om detta är kvar",
+        };
         this.pubnub = new PubNubReact({
             publishKey: keys.publish,
             subscribeKey: keys.subscribe
         });
         this.pubnub.init(this);
+        window.addEventListener('deviceorientation', function(event) {
+          console.log(this);
+          this.setState({
+            orientation:event.alpha,
+          });
+          // console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
+        }.bind(this));
     }
  
     componentWillMount() {
@@ -52,10 +62,11 @@ export default class Homescreen extends Component {
         const messages = this.pubnub.getMessage('channel1');
         return (
             <div>
+                <button onClick = {() => this.testSend()}>test send</button>
+                <p>{this.state.orientation}</p>
                 <ul>
                     {messages.map((m, index) => <li key={'message' + index}>{m.message}</li>)}
                 </ul>
-                <button onClick = {() => this.testSend()}>test send</button>
             </div>
         );
     }
