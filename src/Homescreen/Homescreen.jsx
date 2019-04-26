@@ -153,7 +153,7 @@ class Homescreen extends Component {
     }
 
     showCoords(){
-      console.log(this.props.coords);
+      alert("lat: " + this.props.coords.latitude + " long: " + this.props.coords.longitude);
     }
 
     render() {
