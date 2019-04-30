@@ -25,7 +25,10 @@ export default class Send extends Component {
                 <p>Sending messages to the</p>
                 <h1 style = {{fontFamily:"Lucida Sans Typewriter"}} >{this.props.getDirectionOfDevice()}</h1>
                 <hr/>
-                <form onSubmit = {() =>this.props.onSend(this.state.text)} >
+                <form onSubmit = {(event) =>{
+                    event.preventDefault();
+                    this.props.onSend(this.state.text);
+                }} >
                     <Ons.Input
                         value = {this.state.text}
                         onChange = {(event) => { this.setState({text: event.target.value})} }
