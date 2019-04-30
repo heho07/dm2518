@@ -19,7 +19,7 @@ export default class Receive extends Component {
           <Ons.Page>
             <p>{this.props.orientation}</p>
             <ul>
-                {this.props.messages.map((m, index) => <li key={'message' + index}>{m.message.content + m.message.biggerLat}</li>)}
+                {this.props.messages.map((m, index) => <li key={'message' + index}>{m.message.content }</li>)}
             </ul>
         </Ons.Page>
         );

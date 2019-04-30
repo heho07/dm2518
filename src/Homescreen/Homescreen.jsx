@@ -5,7 +5,6 @@ import keys from "./keys";
 import Send from "./Send";
 import Receive from "./Receive";
 
-import {geolocated} from 'react-geolocated';
 import * as Ons from "react-onsenui"; // Import everything and use it as 'Ons.Page', 'Ons.Button'
 import * as ons from "onsenui"; // This needs to be imported to bootstrap the components.
 // Webpack CSS import
@@ -18,10 +17,7 @@ class Homescreen extends Component {
         this.state = {
           orientation: "funkar inte om detta är kvar",
           messages:[],
-          messagesQ1:[],
-          messagesQ2:[],
-          messagesQ3:[],
-          messagesQ4:[],
+
           messagesToDisplay:[],
         };
         this.pubnub = new PubNubReact({
@@ -43,51 +39,19 @@ class Homescreen extends Component {
             channels: ['channel1'],
             withPresence: true
         });
- 
+        let z = this.state.orientation;
         this.pubnub.getMessage('channel1', (msg) => {
             console.log(msg);
             this.state.messages.push(msg);
-            if(!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled){
-              console.log("Enable geolocation!");
-              return
-            }
-            let coords = this.props.coords;
-            let lat = coords.latitude;
-            let long = coords.longitude;
-            if (lat === null || long === null) {
-              return
-            }
-            if (msg.message.biggerLat && msg.message.biggerLong) {
-              if (lat >= msg.message.coords.lat && long >= msg.message.coords.long) {
-                this.state.messagesToDisplay.push(msg);
-              }
-            }
-            else if (!msg.message.biggerLat && msg.message.biggerLong){
-              if (lat < msg.message.coords.lat && long >= msg.message.coords.long) {
-                this.state.messagesToDisplay.push(msg);
-              }
-            }
-            else if (!msg.message.biggerLat && !msg.message.biggerLong){
-              if (lat < msg.message.coords.lat && long < msg.message.coords.long) {
-                this.state.messagesToDisplay.push(msg);
-              }
-            }
-            else if (msg.message.biggerLat && !msg.message.biggerLong){
-              if (lat >= msg.message.coords.lat && long < msg.message.coords.long) {
-                this.state.messagesToDisplay.push(msg);
-              }
+            
+            if (msg.message.direction === this.getDirectionOfDevice() && msg.message.direction !== "Unknown") {
+              this.state.messagesToDisplay.push(msg);
             }
             else{
               console.log("unknown direction :/");
             }
         });
  
-        // this.pubnub.getStatus((st) => {
-        //     this.pubnub.publish({
-        //         message: 'hello world from react',
-        //         channel: 'channel1'
-        //     });
-        // });
     }
  
     componentWillUnmount() {
@@ -96,65 +60,43 @@ class Homescreen extends Component {
         });
     }
 
+    getDirectionOfDevice(){
+      let z = this.state.orientation;
+      let direction;
+      if (315<=z || z<=45){
+          direction = "N";
+      }
+      else if ( 45<z && z<=135 ){
+        direction = "E";
+      }
+      else if (135<z && z<=225){
+        direction = "S";
+      }
+      else if ( 225<z && z <315){
+        direction = "W";
+      }
+      else{
+        console.log("default i switch case: z är " + z);
+        direction = "Unknown";
+      }
+      return direction;
+    }
+
  
     send(msg){
-        let z = this.state.orientation;
-        console.log(z);
-        let biggerLat, biggerLong;
-        
-        if (0<=z && z<=90){
-          biggerLat = true;
-          biggerLong = true;
-        }
-        else if ( 90<z && z<=180 ){
-          biggerLat = false;
-          biggerLong = true;
-        }
-        else if (180<z && z<=270){
-          biggerLat = false;
-          biggerLong = false;
-        }
-        else if ( 270<z && z <360){
-          biggerLat = true;
-          biggerLong = false;
-        }
-        else{
-          console.log("default i switch case: z är " + z);
-          biggerLat = null;
-          biggerLong = null;
-          
-        }
-        console.log(z);
-        console.log(biggerLong);
-        let coords;
-        if(!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled){
-          coords = {
-            lat:null,
-            long:null,
-          }
-          console.log(this.props.coords);
-        }
-        else{
-          coords = {
-            lat: this.props.coords.latitude,
-            long: this.props.coords.longitude,
-          }
-        }
+        console.log(msg);
+        let direction = this.getDirectionOfDevice();
         this.pubnub.publish({
           message: {
             content:msg,
-            biggerLat:biggerLat,
-            biggerLong:biggerLong,
-            coords:coords,
+            direction:direction,
           },
           channel: 'channel1',          
         });
         console.log(this.state.messages);
     }
 
-    showCoords(){
-      alert("lat: " + this.props.coords.latitude + " long: " + this.props.coords.longitude);
-    }
+
 
     render() {
         // const messages = this.pubnub.getMessage('channel1');
@@ -172,7 +114,7 @@ class Homescreen extends Component {
                 {
                   content: (
                     <Ons.Page key="Feed">
-                     <Send onSend = {(msg) => this.send(msg)} showCoords = {() => this.showCoords()}/>
+                     <Send onSend = {(msg) => this.send(msg)} />
                     
                     </Ons.Page>
                   ),
@@ -199,9 +141,4 @@ class Homescreen extends Component {
 }
                 
 // initializes the geolocated thing and sets Homescreen aas it's child
-export default geolocated({
-  positionOptions: {
-    enableHighAccuracy: false,
-  },
-  userDecisionTimeout: 5000,
-})(Homescreen);
+export default Homescreen;

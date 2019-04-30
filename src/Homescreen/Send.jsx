@@ -11,6 +11,9 @@ import "onsenui/css/onsen-css-components.css";
 export default class Send extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            text:"Write your message here!"
+        }
     }
 
 
@@ -18,8 +21,15 @@ export default class Send extends Component {
         return (
             
           <Ons.Page>
-    <button onClick = {() => this.props.showCoords()}>visa koordinater</button>
-            <button onClick = {() => this.props.onSend("hej")}>skick hej</button>
+            <form onSubmit = {() =>this.props.onSend(this.state.text)} >
+                <Ons.Input
+                    value = {this.state.text}
+                    onChange = {(event) => { this.setState({text: event.target.value})} }
+                    modifier= 'material'
+                    placeholder= 'Username'
+                />
+            <input type = "submit"/>
+            </form>
         </Ons.Page>
         );
     }
