@@ -12,7 +12,7 @@ export default class Send extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text:"Write your message here!"
+            text:""
         }
     }
 
@@ -34,7 +34,7 @@ export default class Send extends Component {
                         value = {this.state.text}
                         onChange = {(event) => { this.setState({text: event.target.value})} }
                         modifier= 'material'
-                        placeholder= 'Username'
+                        placeholder= 'Write your message here!'
                     />
                 </form>
                 <Ons.Button onClick = {() => this.props.onSend(this.state.text)} style = {{backgroundColor:"black", marginTop:"1em"}}>Send message!</Ons.Button>
