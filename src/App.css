@@ -33,6 +33,10 @@
 }
 
 p {
-  font-family: "Lucida Sans Typewriter";
+  font-family: "Lucida Sans Typewriter, American Typewriter";
   font-size: 1.2em;
+}
+
+input[type=text] {
+  font-family: "Lucida Sans Typewriter, American Typewriter";
 }

@@ -19,7 +19,7 @@ export default class Receive extends Component {
           <Ons.Page>
             <center>
                 <p>Receiving messages from the</p>
-                <h1 style = {{fontFamily:"Lucida Sans Typewriter"}}>{this.props.getDirectionOfDevice()}</h1>
+                <h1 style = {{fontFamily:"Lucida Sans Typewriter, American Typewriter"}}>{this.props.getDirectionOfDevice()}</h1>
                 <hr/>
             </center>
             <ul>
