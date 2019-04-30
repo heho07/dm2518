@@ -30,7 +30,7 @@ export default class Send extends Component {
                     this.props.onSend(this.state.text);
                 }} >
                     <Ons.Input
-                        style = {{fontFamily:"Lucida Sans Typewriter, American Typewriter"}}
+                        style = {{fontFamily:"Lucida Sans Typewriter, American Typewriter", width:"auto"}}
                         value = {this.state.text}
                         onChange = {(event) => { this.setState({text: event.target.value})} }
                         modifier= 'material'
