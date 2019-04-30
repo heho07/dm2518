@@ -23,7 +23,7 @@ export default class Send extends Component {
           <Ons.Page>
               <center>
                 <p>Sending messages to the</p>
-                <h1 style = {{fontFamily:"Lucida Sans Typewriter"}} >{this.props.getDirectionOfDevice()}</h1>
+                <h1 style = {{fontFamily:"Lucida Sans Typewriter, American Typewriter"}} >{this.props.getDirectionOfDevice()}</h1>
                 <hr/>
                 <form onSubmit = {(event) =>{
                     event.preventDefault();
