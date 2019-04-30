@@ -67,13 +67,13 @@ class Homescreen extends Component {
           direction = "North";
       }
       else if ( 45<z && z<=135 ){
-        direction = "East";
+        direction = "West";
       }
       else if (135<z && z<=225){
         direction = "South";
       }
       else if ( 225<z && z <315){
-        direction = "West";
+        direction = "East";
       }
       else{
         console.log("default i switch case: z är " + z);
