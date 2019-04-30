@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-brands-400.da408238.woff"
   },
   {
-    "revision": "ffe79802a441353c518e",
+    "revision": "a3e2a6458aeeae6ebff6",
     "url": "/dm2518/static/css/main.6271e6b1.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/dm2518/static/js/runtime~main.17d095a9.js"
   },
   {
-    "revision": "de1d242d8acb26ec43c0d071fe78e72d",
-    "url": "/dm2518/static/media/fa-solid-900.de1d242d.svg"
+    "revision": "83e6c29fb363b2f0ea6cc18fefff729c",
+    "url": "/dm2518/static/media/fa-brands-400.83e6c29f.svg"
   },
   {
     "revision": "7bd4ec2e15f3f1b85914",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/ionicons.2c159d0d.woff"
   },
   {
-    "revision": "ffe79802a441353c518e",
-    "url": "/dm2518/static/js/main.d4315706.chunk.js"
+    "revision": "a3e2a6458aeeae6ebff6",
+    "url": "/dm2518/static/js/main.e2cb8778.chunk.js"
   },
   {
     "revision": "2d0415fa29ea596b7a02c78eddeede20",
@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/fa-regular-400.ba2a91dc.svg"
   },
   {
-    "revision": "132e9759d93e4eefd7cdde0d7a322991",
-    "url": "/dm2518/static/media/fa-solid-900.132e9759.ttf"
-  },
-  {
     "revision": "ea363ed422723673917901680be9b37c",
     "url": "/dm2518/static/media/fa-solid-900.ea363ed4.eot"
+  },
+  {
+    "revision": "132e9759d93e4eefd7cdde0d7a322991",
+    "url": "/dm2518/static/media/fa-solid-900.132e9759.ttf"
   },
   {
     "revision": "dd4781d1acc57ba4c4808d1b44301201",
@@ -100,15 +100,15 @@ self.__precacheManifest = [
     "url": "/dm2518/static/media/ionicons.aff28a20.svg"
   },
   {
-    "revision": "83e6c29fb363b2f0ea6cc18fefff729c",
-    "url": "/dm2518/static/media/fa-brands-400.83e6c29f.svg"
+    "revision": "de1d242d8acb26ec43c0d071fe78e72d",
+    "url": "/dm2518/static/media/fa-solid-900.de1d242d.svg"
   },
   {
     "revision": "7bd4ec2e15f3f1b85914",
     "url": "/dm2518/static/css/2.02b6a8fa.chunk.css"
   },
   {
-    "revision": "028a7cfe821f6905defb7c816d967f48",
+    "revision": "c8b18b9a6a23e140873b38f190d3519c",
     "url": "/dm2518/index.html"
   }
 ];
