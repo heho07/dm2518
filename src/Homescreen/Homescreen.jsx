@@ -125,9 +125,9 @@ class Homescreen extends Component {
                     <Ons.Page key="Upload">
                       <Receive 
                         messages = { 
-                          (!this.props.isGeolocationAvailable || !this.props.isGeolocationEnabled) ?
+                          (this.getDirectionOfDevice() === "Unknown") ?
                             this.state.messages : this.state.messagesToDisplay
-                        } 
+                          } 
                         orientation = {this.state.orientation} />
                     </Ons.Page>
                   ),
