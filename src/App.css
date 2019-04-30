@@ -32,11 +32,7 @@
   }
 }
 
-p, li {
-  font-family: "Papyrus";
+p {
+  font-family: "Lucida Sans Typewriter";
   font-size: 1.2em;
-}
-
-h3{
-  font-family: "Papyrus";
 }

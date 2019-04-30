@@ -64,16 +64,16 @@ class Homescreen extends Component {
       let z = this.state.orientation;
       let direction;
       if (315<=z || z<=45){
-          direction = "N";
+          direction = "North";
       }
       else if ( 45<z && z<=135 ){
-        direction = "E";
+        direction = "East";
       }
       else if (135<z && z<=225){
-        direction = "S";
+        direction = "South";
       }
       else if ( 225<z && z <315){
-        direction = "W";
+        direction = "West";
       }
       else{
         console.log("default i switch case: z är " + z);
@@ -113,25 +113,30 @@ class Homescreen extends Component {
               renderTabs={(activeIndex, tabbar) => [
                 {
                   content: (
-                    <Ons.Page key="Feed">
-                     <Send onSend = {(msg) => this.send(msg)} />
+                    <Ons.Page key="Send">
+                     <Send 
+                      onSend = {(msg) => this.send(msg)} 
+                      getDirectionOfDevice = {() => this.getDirectionOfDevice()}
+                    />
                     
                     </Ons.Page>
                   ),
-                  tab: <Ons.Tab label="Feed" icon="fa-headphones" key="FeedTab" />
+                  tab: <Ons.Tab label="Send" icon="fa-volume-up" key="SendTab" />
                 },
                 {
                   content: (
-                    <Ons.Page key="Upload">
+                    <Ons.Page key="Receive">
                       <Receive 
                         messages = { 
                           (this.getDirectionOfDevice() === "Unknown") ?
                             this.state.messages : this.state.messagesToDisplay
                           } 
-                        orientation = {this.state.orientation} />
+                        orientation = {this.state.orientation} 
+                        getDirectionOfDevice = {() => this.getDirectionOfDevice()}
+                        />
                     </Ons.Page>
                   ),
-                  tab: <Ons.Tab label="Upload" icon="fa-microphone" key="UploadTab" />
+                  tab: <Ons.Tab label="Receive" icon="fa-eye" key="ReceiveTab" />
                 }
               ]}
             />

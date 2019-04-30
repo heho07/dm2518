@@ -21,15 +21,20 @@ export default class Send extends Component {
         return (
             
           <Ons.Page>
-            <form onSubmit = {() =>this.props.onSend(this.state.text)} >
-                <Ons.Input
-                    value = {this.state.text}
-                    onChange = {(event) => { this.setState({text: event.target.value})} }
-                    modifier= 'material'
-                    placeholder= 'Username'
-                />
-            <input type = "submit"/>
-            </form>
+              <center>
+                <p>Sending messages to the</p>
+                <h1 style = {{fontFamily:"Lucida Sans Typewriter"}} >{this.props.getDirectionOfDevice()}</h1>
+                <hr/>
+                <form onSubmit = {() =>this.props.onSend(this.state.text)} >
+                    <Ons.Input
+                        value = {this.state.text}
+                        onChange = {(event) => { this.setState({text: event.target.value})} }
+                        modifier= 'material'
+                        placeholder= 'Username'
+                    />
+                </form>
+                <Ons.Button onClick = {() => this.props.onSend(this.state.text)} style = {{backgroundColor:"black", marginTop:"1em"}}>Send message!</Ons.Button>
+            </center>
         </Ons.Page>
         );
     }

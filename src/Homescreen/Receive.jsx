@@ -17,9 +17,13 @@ export default class Receive extends Component {
         return (
             
           <Ons.Page>
-            <p>{this.props.orientation}</p>
+            <center>
+                <p>Receiving messages from the</p>
+                <h1 style = {{fontFamily:"Lucida Sans Typewriter"}}>{this.props.getDirectionOfDevice()}</h1>
+                <hr/>
+            </center>
             <ul>
-                {this.props.messages.map((m, index) => <li key={'message' + index}>{m.message.content }</li>)}
+                {this.props.messages.map((m, index) => <li key={'message' + index}><b>{m.message.direction}</b> {": " +m.message.content }</li>)}
             </ul>
         </Ons.Page>
         );
